@@ -1,18 +1,31 @@
 # MDST — Modular Dynamical Systems Toolkit
 
+![License](https://img.shields.io/badge/license-MPL--2.0-blue)
+![Docs](https://img.shields.io/badge/docs-CC%20BY%204.0-green)
+![Status](https://img.shields.io/badge/status-foundational-orange)
+
 A computational and algebraic framework for analyzing exponent dynamics over finite rings using CRT decomposition, idempotent classification, and discrete dynamical systems.
 
 ---
 
-## Features
+## Overview
+
+MDST provides a unified framework for:
 
 - CRT-based decomposition
-- O(1) attractor classification
+- Functional graph analysis
+- Attractor classification
 - Basin partitioning
-- Functional graph generation
-- Cache-friendly local tables
-- Parallelizable dynamics
-- Toroidal discrete geometry
+- Discrete toroidal geometry
+- Cache-efficient local dynamics
+
+The framework studies exponent maps:
+
+\[
+f_k(x)=x^k \bmod n
+\]
+
+over finite rings.
 
 ---
 
@@ -30,6 +43,13 @@ Specs/
 docs/
 examples/
 
+Key Concepts
+Chinese Remainder Theorem (CRT)
+Local dynamical decomposition
+Idempotent attractors
+Φ classification
+Functional graphs
+Basin geometry
 Licensing
 Code
 
@@ -43,40 +63,19 @@ Related Projects
 
 Yupana CRT is an experimental computational architecture derived from MDST principles.
 
-(Repository link coming soon.)
+Repository link coming soon.
 
 Status
 
 Foundational release.
+Research and architecture under active development.
 
-
-Guardá el archivo.
 
 ---
 
-# FASE 6 — Crear .gitignore
+# PASO 2 — Crear VERSION
 
-Abrí `.gitignore` y pegá:
+Ejecutá:
 
-```gitignore
-# Python
-__pycache__/
-*.pyc
-
-# VSCode
-.vscode/
-
-# Build
-build/
-dist/
-
-# Logs
-*.log
-
-# Binary exports
-*.bin
-*.dat
-
-# OS
-.DS_Store
-Thumbs.db
+```powershell id="9lzqk0"
+ni VERSION
