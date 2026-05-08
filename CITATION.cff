@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "MDST — Modular Dynamical Systems Toolkit"
+message: "If you use this project in research, please cite it."
+type: software
+
+authors:
+  - family-names: "Farias"
+    given-names: "Fabian Dario"
+
+repository-code: "https://github.com/vector1109/MDST-Modular-Dynamical-Systems-Toolkit"
+
+license: "MPL-2.0"
+
+abstract: >
+  A computational and algebraic framework for analyzing exponent
+  dynamics over finite rings using CRT decomposition,
+  idempotent classification, and discrete dynamical systems.
+
+keywords:
+  - CRT
+  - finite rings
+  - modular arithmetic
+  - discrete dynamics
+  - idempotents
+  - algebra
+  - dynamical systems
