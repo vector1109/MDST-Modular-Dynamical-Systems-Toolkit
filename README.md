@@ -296,26 +296,26 @@ The key insight is:
 
 ---
 
-## Visual Atlas
+# Visual Atlas
 
-### Functional Graph
+## Functional Graph
 
 ![Functional Graph](docs/atlas/functional_graph_z60.png)
 
 ---
 
-### Φ Field
+## Φ Field
 
 ![Phi Field](docs/atlas/phi_field_z60.png)
 
 ---
 
-### Basin Atlas
+## Basin Atlas
 
 ![Basin Atlas](docs/atlas/basin_atlas_z60.png)
 
 ---
 
-### CRT Torus Projection
+## CRT Toroidal Projection
 
 ![CRT Torus](docs/atlas/crt_torus_z60.png)
