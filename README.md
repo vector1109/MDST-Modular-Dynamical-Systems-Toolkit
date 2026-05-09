@@ -295,3 +295,27 @@ The key insight is:
 > Dynamics over (\mathbb{Z}_n) are not time evolution, but space partitioning.
 
 ---
+
+## Visual Atlas
+
+### Functional Graph
+
+![Functional Graph](docs/atlas/functional_graph_z60.png)
+
+---
+
+### Φ Field
+
+![Phi Field](docs/atlas/phi_field_z60.png)
+
+---
+
+### Basin Atlas
+
+![Basin Atlas](docs/atlas/basin_atlas_z60.png)
+
+---
+
+### CRT Torus Projection
+
+![CRT Torus](docs/atlas/crt_torus_z60.png)
