@@ -20,15 +20,9 @@ and introduce a canonical classification operator \( \Phi \), which assigns each
 
 MDST replaces traditional stepwise iteration with a direct algebraic projection onto dynamical basins, revealing a hidden toroidal geometry underlying modular exponentiation.
 
-The framework is fully deterministic, cache-local, and parallelizable.
+The framework is deterministic, cache-local, and parallelizable.
 
-We also present the **Yupana CRT model** (as a separate implementation project), which serves as a computational instantiation of this theory.
-
----
-
-## Keywords
-
-CRT decomposition, finite rings, modular dynamics, functional graphs, idempotents, discrete dynamical systems, algebraic computation, modular torsion
+We also present the **Yupana CRT model** (as a separate implementation project), which serves as a computational realization of this theory.
 
 ---
 
@@ -59,7 +53,9 @@ we obtain a fully factorized representation of the system where each component e
 ## 2.1 State Space
 
 $$
-\mathcal{X}_n=\mathbb{Z}_n
+\mathcal{X}_n
+=
+\mathbb{Z}_n
 \cong
 \mathbb{Z}_{p_1^{\alpha_1}}
 \times
@@ -89,7 +85,8 @@ $$
 which decomposes into:
 
 $$
-f_k(x_1,\dots,x_r)=
+f_k(x_1,\dots,x_r)
+=
 (x_1^k,\dots,x_r^k)
 $$
 
@@ -101,7 +98,7 @@ All operations are local to each modulus component.
 
 The system satisfies:
 
-> Global dynamics = product of independent local dynamics
+> Global dynamics = product of independent local dynamics.
 
 There is no cross-component coupling.
 
@@ -115,14 +112,14 @@ $$
 \Phi:\mathbb{Z}_n \to E_n
 $$
 
-where \( E_n \) is the set of idempotent elements.
+where \(E_n\) is the set of idempotent elements.
 
 ## Definition
 
 $$
-\Phi(x_1,\dots,x_r)=
-\operatorname{CRT}
-(
+\Phi(x_1,\dots,x_r)
+=
+CRT(
 \phi_1(x_1),
 \dots,
 \phi_r(x_r)
@@ -131,7 +128,7 @@ $$
 
 with:
 
-- \( \phi_i(x_i)=0 \) if divisible by \( p_i \)
+- \( \phi_i(x_i)=0 \) if \(x_i\) is divisible by \(p_i\)
 - \( \phi_i(x_i)=1 \) otherwise
 
 ---
@@ -161,7 +158,7 @@ $$
 \mathbb{Z}_{p_i^{\alpha_i}}
 $$
 
-This induces a discrete toroidal topology.
+which induces a discrete toroidal topology.
 
 ---
 
@@ -194,14 +191,16 @@ This graph decomposes into:
 
 # 5. Computational Model
 
-MDST replaces iterative computation with algebraic projection.
+MDST replaces iterative computation with direct algebraic evaluation.
 
 ## 5.1 Table-Driven Evaluation
 
-For each CRT component:
+For each component:
 
 $$
-T_i[a]=a^k \bmod p_i^{\alpha_i}
+T_i[a]
+=
+a^k \bmod p_i^{\alpha_i}
 $$
 
 ---
@@ -210,8 +209,8 @@ $$
 
 | Method | Complexity |
 |---|---|
-| Iteration | \( O(t \cdot n) \) |
-| MDST | \( O(r) \) lookup |
+| Iterative dynamics | \(O(t\cdot n)\) |
+| MDST lookup | \(O(r)\) |
 
 ---
 
@@ -225,7 +224,9 @@ Each CRT component is independent:
 
 ---
 
-# 6. Experimental Case — \( \mathbb{Z}_{60} \)
+# 6. Experimental Case: \( \mathbb{Z}_{60} \)
+
+Factorization:
 
 $$
 60=2^2\cdot3\cdot5
@@ -234,6 +235,8 @@ $$
 CRT decomposition:
 
 $$
+\mathbb{Z}_{60}
+\cong
 \mathbb{Z}_4
 \times
 \mathbb{Z}_3
@@ -245,108 +248,96 @@ $$
 
 - 8 attractor classes
 - non-uniform basin sizes
-- maximum dynamic depth = 2
-- full convergence without iterative simulation via \( \Phi \)
+- maximum dynamic depth \(D(60,2)=2\)
+- direct attractor classification via \( \Phi \)
 
 ---
 
 # 7. Visual Atlas
 
-MDST is naturally represented through four coupled layers:
+MDST admits four coupled geometric representations:
 
-- Functional graph (global dynamics)
-- Φ field (classification space)
-- Basin atlas (attractor partition)
-- CRT torus (internal structure)
+- Functional graph
+- Φ field
+- Basin atlas
+- CRT toroidal projection
 
-All layers are algebraically equivalent.
-
----
-
-# 8. Modular Torsion Extension
-
-MDST further introduces **modular torsion** as a dynamical invariant over finite rings.
-
-This extends the Φ classifier into a fine-grained dynamical classification framework.
-
-See:
-
-- `Theory/torsion-modular.md`
+These layers are algebraically equivalent.
 
 ---
 
-# 9. Relationship to Yupana CRT
+# 8. Relationship to Yupana CRT
 
 MDST defines the theoretical framework.
 
-The **Yupana CRT project** (separate repository) implements:
+The **Yupana CRT** repository provides:
 
 - table-driven execution engines
-- hardware-inspired modular computation
+- hardware-oriented modular computation
 - spatial CRT visualization systems
-- experimental computational architectures
+- future torsion-aware architectures
 
 > MDST = theory  
 > Yupana CRT = computational realization
 
 ---
 
-# 10. Properties
+# 9. Properties
 
-- Deterministic
-- Finite-state complete
-- Fully decomposable
-- Cache-local
-- Parallelizable
-- Non-iterative classification
-- Dynamically invariant torsion structure
+- deterministic
+- finite-state complete
+- fully decomposable
+- cache-local
+- parallelizable
+- non-iterative classification
 
 ---
 
-# 11. Future Work
+# 10. Future Work
 
-- FPGA implementation of CRT torus execution
+- FPGA implementation of CRT toroidal execution
 - extension to polynomial dynamics
 - categorical formulation of \( \Phi \)
 - spectral analysis of functional graphs
-- torsion-aware computation
+- torsion-aware modular computation
 - embedding into discrete neural systems
 
 ---
 
-# 12. Repository Structure
+# 11. Repository Structure
 
 ```text
 MDST/
-├── Core/              # CRT engine and algebraic primitives
-├── Z60/               # Canonical experiments
-├── Z216/              # Extended systems
-├── Observers/         # Analysis tools
-├── Experiments/       # Simulation scripts
-├── Theory/            # Formal mathematical definitions
-├── Specs/             # Mathematical specifications
+├── Core/
+├── Z60/
+├── Z216/
+├── Observers/
+├── Experiments/
+├── Theory/
+├── Specs/
 ├── docs/
-│   └── atlas/         # Visual geometric representations
-└── examples/          # Minimal demonstrations
+│   └── atlas/
+└── examples/
 ```
 
 ---
 
-# 13. License
+# 12. License
 
-This repository contains open research material.
+This project is released under a dual-license structure:
 
-Separate implementations and commercial extensions may be distributed under different licenses.
+- academic and research usage: open license
+- commercial and industrial usage: separate commercial licensing required
 
-See the LICENSE file for details.
+See LICENSE for details.
 
 ---
 
-# 14. Conclusion
+# 13. Conclusion
 
-MDST reframes modular exponent dynamics not as iterative processes, but as algebraic geometry over finite rings.
+MDST reframes modular exponentiation dynamics not as iterative temporal processes, but as algebraic geometry over finite rings.
 
-The key insight is:
+The central insight is:
 
 > Dynamics over \( \mathbb{Z}_n \) are not time evolution, but space partitioning.
 
@@ -375,4 +366,3 @@ The key insight is:
 ## CRT Toroidal Projection
 
 ![CRT Torus](docs/atlas/crt_torus_z60.png)
-
